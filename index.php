@@ -79,14 +79,15 @@ function Seconds_in_year ($year){
     return Seconds_in_month($year * 365);
 }
 
-
-
-
 echo "<hr>" . "Секунд в часе " . Seconds_in_hour(1) . "<br/>";
 echo "Секунд в дне " . Seconds_in_day(1) . "<br/>";
 echo "Секунд в месяце " . Seconds_in_month(1) . "<br/>";
 echo "Секунд в году " . Seconds_in_year(1) . "<br/>";
-echo "Не сделал";
+
+$date_now = time();
+$date_2000 = mktime(0, 0, 0, 1, 1, 2020);
+
+echo "С 2000 года прошло " . ($date_now - $date_2000) . " секунд";
 
 //8. Создайте три переменные - час, минута, секунда. С их помощью выведите
 //текущее время в формате 'час:минута:секунда'.
