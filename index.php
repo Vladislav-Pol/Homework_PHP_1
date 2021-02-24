@@ -66,7 +66,27 @@ echo $sum6;
 //7. Напишите скрипт, который считает количество секунд в часе, в сутках, в
 //месяце, в году и сколько прошло секунд с начала 2000 года.
 
-echo "<hr>" . "Не сделал";
+function Seconds_in_hour ($hour){
+    return $hour * 60 * 60;
+}
+function Seconds_in_day ($day){
+    return Seconds_in_hour($day * 24);
+}
+function Seconds_in_month ($month){
+    return Seconds_in_day($month * 30);
+}
+function Seconds_in_year ($year){
+    return Seconds_in_month($year * 365);
+}
+
+
+
+
+echo "<hr>" . "Секунд в часе " . Seconds_in_hour(1) . "<br/>";
+echo "Секунд в дне " . Seconds_in_day(1) . "<br/>";
+echo "Секунд в месяце " . Seconds_in_month(1) . "<br/>";
+echo "Секунд в году " . Seconds_in_year(1) . "<br/>";
+echo "Не сделал";
 
 //8. Создайте три переменные - час, минута, секунда. С их помощью выведите
 //текущее время в формате 'час:минута:секунда'.
@@ -109,14 +129,16 @@ echo "<hr>" . $var;
 //"Меня зовут Иванов (И. И.).
 //Мне 5 лет."
 
-define("surname", "Полоник");
-define("name", "Владислав");
-define("patronymic", "Владимирович");
-define("age", "31");
+define("SURNAME", "Полоник");
+define("NAME", "Владислав");
+define("PATRONYMIC", "Владимирович");
+define("AGE", "31");
 
-if (defined("surname")){
-    ?><p><hr>
-    Меня зовут <?=surname?> (<?=substr(name, 0,1) ?>. <?=substr(patronymic,0, 1)?>.)<br/>
-    Мне <?=age?>.
+if (defined("SURNAME")){
+    ?><hr><p>
+    Меня зовут <?=SURNAME?> (<?=substr(NAME, 0,1) ?>. <?=substr(PATRONYMIC,0, 1)?>.)<br/>
+    Мне <?=AGE?>.
     </p><?
 }
+
+
