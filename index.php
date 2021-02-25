@@ -135,11 +135,11 @@ define("NAME", "Владислав");
 define("PATRONYMIC", "Владимирович");
 define("AGE", "31");
 
-if (defined("SURNAME")){
-    ?><hr><p>
+if (defined("SURNAME")):?>
+    <hr><p>
     Меня зовут <?=SURNAME?> (<?=substr(NAME, 0,1) ?>. <?=substr(PATRONYMIC,0, 1)?>.)<br/>
     Мне <?=AGE?>.
-    </p><?
-}
+    </p>
+<?endif;
 
 
